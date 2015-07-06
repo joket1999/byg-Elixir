@@ -13,6 +13,6 @@
     "gulp-riot": "^0.2.15",
     "laravel-elixir": "^2.3.12",
     "laravel-elixir-sass-compass": "^0.3.0",
-    "byg-elixir-tag": "^1.0.0"
+    "byg-elixir-tag": "^1.0.1"
   }
 }
