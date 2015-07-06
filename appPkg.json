@@ -1,0 +1,16 @@
+{
+	"weihuobao": {
+		"name": "weihuobao",
+		"sass": [
+			"index.scss"
+		],
+		"tags": {
+			"components": [
+				"modal.tag"
+			],
+			"pageTags": [
+				"weihuobao/**/*"
+			]
+		}
+	}
+}
