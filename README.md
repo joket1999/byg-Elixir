@@ -35,3 +35,7 @@ sass、tag文件编译
 
  	var source = './source/', //源码目录
 		output = './appSource/weihuobao/'; // 编译后文件输出目录
+
+## 运行 
+	
+	在项目的根目录 运行 gulp watch
