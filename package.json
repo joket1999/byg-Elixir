@@ -1,6 +1,6 @@
 {
   "name": "byg-Elixir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "对sass、tag文件编译处理",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,10 @@
   "author": "joshua",
   "license": "MIT",
   "dependencies": {
+    "byg-elixir-tag": "^1.0.1",
     "gulp": "^3.9.0",
     "gulp-riot": "^0.2.15",
     "laravel-elixir": "^2.3.12",
-    "laravel-elixir-sass-compass": "^0.3.0",
-    "byg-elixir-tag": "^1.0.1"
+    "laravel-elixir-sass-compass": "^0.3.0"
   }
 }

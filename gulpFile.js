@@ -11,6 +11,7 @@ var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 var appPkg = require('./appPkg.json').weihuobao;
 var utils = require('byg-elixir-tag/lib/utils');
+var compass = require('gulp-compass');
 
 require('laravel-elixir-sass-compass');
 require('byg-elixir-tag');
@@ -56,12 +57,20 @@ var options = {
 	sass: source + 'sass', //sass源目录
 	tags: source + 'tags', //tag源目录
 	fonts: source + 'fonts', //字体源目录
-    images: source + 'images', //图片源目录
+	images: source + 'images', //图片源目录
 	css: output + 'css', //css的输出目录
 	tagDist: output + 'js', //tag生成的js文件的目录
 	configFile: source + 'config.rb', //config.rb位置
 };
 
+var sassOptions = {
+	config_file: options.config_file,
+	style: "expanded", //  "nested", "compressed", "expanded"
+	sass: options.sass,
+	css: options.css,
+	font: options.fonts,
+	image: options.images
+};
 
 
 // 执行编译
@@ -78,14 +87,8 @@ elixir(function(mix) {
 	});
 
 	// 编译sass文件
-	mix.compass(appPkg.sass, options.css, {
-		config_file: options.config_file,
-		style: "expanded", //  "nested", "compressed", "expanded"
-		sass: options.sass,
-		font: options.fonts,
-		image: options.images
-	});
+	appPkg.sass && mix.compass(appPkg.sass, options.css, sassOptions);
 
 	// 编译tag文件
-	mix.riot(appPkg.tags, options.tagDist, options.tags);
+	appPkg.tags && mix.riot(appPkg.tags, options);
 });
