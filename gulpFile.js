@@ -11,7 +11,6 @@ var gulp = require('gulp');
 var elixir = require('laravel-elixir');
 var appPkg = require('./appPkg.json').weihuobao;
 var utils = require('byg-elixir-tag/lib/utils');
-var compass = require('gulp-compass');
 
 require('laravel-elixir-sass-compass');
 require('byg-elixir-tag');
@@ -54,7 +53,7 @@ var source = './source/', //源码目录
 var options = {
 	source: source,
 	output: output,
-	sass: source + 'sass', //sass源目录
+	sass: source + 'sass/' + appPkg.name, //sass源目录
 	tags: source + 'tags', //tag源目录
 	fonts: source + 'fonts', //字体源目录
 	images: source + 'images', //图片源目录
